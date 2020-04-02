@@ -34,8 +34,8 @@ struct ImageRotator {
         
         let radiansToRotate = self.radians * direction.rawValue
         
-        let oldFrame = CGRect(origin: CGPoint.zero, size: image.size)        
-        var newSize = oldFrame.applying(CGAffineTransform(rotationAngle: CGFloat(radiansToRotate))).size
+        let oldSizeAsRect = CGRect(origin: CGPoint.zero, size: image.size)
+        var newSize = oldSizeAsRect.applying(CGAffineTransform(rotationAngle: CGFloat(radiansToRotate))).size
         
         // Trim off the extremely small float value to prevent core graphics from rounding it up
         newSize.width = floor(newSize.width)
