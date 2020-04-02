@@ -14,7 +14,18 @@
 		7C0126132435DA82003410BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0126112435DA82003410BF /* LaunchScreen.storyboard */; };
 		7C01261E2435DBEE003410BF /* ImageRotator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01261D2435DBEE003410BF /* ImageRotator.swift */; };
 		7C0126202435DCEC003410BF /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01261F2435DCEC003410BF /* ImageAsset.swift */; };
+		7C01262A243615EA003410BF /* ImageRotatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C012629243615EA003410BF /* ImageRotatorTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7C01262C243615EA003410BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C0125FB2435DA81003410BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C0126022435DA81003410BF;
+			remoteInfo = ImageRotation;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7C0126032435DA81003410BF /* ImageRotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageRotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +37,20 @@
 		7C0126142435DA82003410BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C01261D2435DBEE003410BF /* ImageRotator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRotator.swift; sourceTree = "<group>"; };
 		7C01261F2435DCEC003410BF /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
+		7C012627243615EA003410BF /* ImageRotatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageRotatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C012629243615EA003410BF /* ImageRotatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRotatorTests.swift; sourceTree = "<group>"; };
+		7C01262B243615EA003410BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7C0126002435DA81003410BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C012624243615EA003410BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				7C0126052435DA81003410BF /* ImageRotation */,
+				7C012628243615EA003410BF /* ImageRotatorTests */,
 				7C0126042435DA81003410BF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				7C0126032435DA81003410BF /* ImageRotation.app */,
+				7C012627243615EA003410BF /* ImageRotatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +91,15 @@
 				7C01261F2435DCEC003410BF /* ImageAsset.swift */,
 			);
 			path = ImageRotation;
+			sourceTree = "<group>";
+		};
+		7C012628243615EA003410BF /* ImageRotatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				7C012629243615EA003410BF /* ImageRotatorTests.swift */,
+				7C01262B243615EA003410BF /* Info.plist */,
+			);
+			path = ImageRotatorTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +122,24 @@
 			productReference = 7C0126032435DA81003410BF /* ImageRotation.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7C012626243615EA003410BF /* ImageRotatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C01262E243615EA003410BF /* Build configuration list for PBXNativeTarget "ImageRotatorTests" */;
+			buildPhases = (
+				7C012623243615EA003410BF /* Sources */,
+				7C012624243615EA003410BF /* Frameworks */,
+				7C012625243615EA003410BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7C01262D243615EA003410BF /* PBXTargetDependency */,
+			);
+			name = ImageRotatorTests;
+			productName = ImageRotatorTests;
+			productReference = 7C012627243615EA003410BF /* ImageRotatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -102,6 +152,10 @@
 				TargetAttributes = {
 					7C0126022435DA81003410BF = {
 						CreatedOnToolsVersion = 11.4;
+					};
+					7C012626243615EA003410BF = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 7C0126022435DA81003410BF;
 					};
 				};
 			};
@@ -119,6 +173,7 @@
 			projectRoot = "";
 			targets = (
 				7C0126022435DA81003410BF /* ImageRotation */,
+				7C012626243615EA003410BF /* ImageRotatorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +186,13 @@
 				7C0126132435DA82003410BF /* LaunchScreen.storyboard in Resources */,
 				7C0126102435DA82003410BF /* Assets.xcassets in Resources */,
 				7C01260E2435DA81003410BF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C012625243615EA003410BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +210,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7C012623243615EA003410BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C01262A243615EA003410BF /* ImageRotatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7C01262D243615EA003410BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C0126022435DA81003410BF /* ImageRotation */;
+			targetProxy = 7C01262C243615EA003410BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7C01260C2435DA81003410BF /* Main.storyboard */ = {
@@ -320,6 +398,46 @@
 			};
 			name = Release;
 		};
+		7C01262F243615EA003410BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HW9KY3R5BK;
+				INFOPLIST_FILE = ImageRotatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.charleshs.ImageRotatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageRotation.app/ImageRotation";
+			};
+			name = Debug;
+		};
+		7C012630243615EA003410BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HW9KY3R5BK;
+				INFOPLIST_FILE = ImageRotatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.charleshs.ImageRotatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageRotation.app/ImageRotation";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -337,6 +455,15 @@
 			buildConfigurations = (
 				7C0126182435DA82003410BF /* Debug */,
 				7C0126192435DA82003410BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C01262E243615EA003410BF /* Build configuration list for PBXNativeTarget "ImageRotatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C01262F243615EA003410BF /* Debug */,
+				7C012630243615EA003410BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
