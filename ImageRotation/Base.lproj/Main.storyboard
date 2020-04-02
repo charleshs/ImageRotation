@@ -19,27 +19,31 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFh-il-pLe">
-                                <rect key="frame" x="8" y="52" width="76" height="32"/>
+                                <rect key="frame" x="24" y="52" width="76" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <state key="normal" title="Clockwise"/>
+                                <state key="normal" title="Clockwise">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="rotateClockwise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hQu-bY-qSj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qS8-ZG-5r5">
-                                <rect key="frame" x="92" y="52" width="133" height="32"/>
+                                <rect key="frame" x="257" y="52" width="133" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <state key="normal" title="Counterclockwise"/>
+                                <state key="normal" title="Counterclockwise">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="rotateCounterclockwise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WKt-4j-Lgp"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KFh-il-pLe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="3uV-Iz-ANy"/>
+                            <constraint firstItem="KFh-il-pLe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="3uV-Iz-ANy"/>
                             <constraint firstItem="hZM-tB-pCo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JIF-72-h4j"/>
-                            <constraint firstItem="qS8-ZG-5r5" firstAttribute="leading" secondItem="KFh-il-pLe" secondAttribute="trailing" constant="8" id="LST-K4-NtK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qS8-ZG-5r5" secondAttribute="trailing" constant="24" id="LBb-1r-O0K"/>
                             <constraint firstItem="hZM-tB-pCo" firstAttribute="top" secondItem="qS8-ZG-5r5" secondAttribute="bottom" constant="8" id="Nzi-nS-qTC"/>
                             <constraint firstItem="qS8-ZG-5r5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="OlL-At-h3n"/>
                             <constraint firstItem="hZM-tB-pCo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YRv-4h-1Wo"/>

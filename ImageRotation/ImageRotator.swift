@@ -42,7 +42,9 @@ struct ImageRotator {
         newSize.height = floor(newSize.height)
         
         UIGraphicsBeginImageContextWithOptions(newSize, false, image.scale)
-        let context = UIGraphicsGetCurrentContext()!
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
 
         // Move origin to middle
         context.translateBy(x: newSize.width/2, y: newSize.height/2)
