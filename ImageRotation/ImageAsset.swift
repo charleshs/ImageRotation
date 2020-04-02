@@ -12,6 +12,9 @@ enum ImageAsset: String {
     
     case scenary
     
+    case icon_rotate_clockwise_24px
+    case icon_rotate_counterclockwise_24px
+    
     func getImage() -> UIImage? {
         
         return UIImage(named: self.rawValue)
