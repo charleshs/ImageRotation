@@ -18,30 +18,41 @@ struct ImageRotator {
     
     private let radians: Float
     
-    init(radians: Float = .pi/2, direction: ImageRotator.Direction = .clockwise) {
+    init(radians: Float = .pi/2) {
         
-        self.radians = radians * direction.rawValue
+        self.radians = radians
     }
     
-    func rotate(_ image: UIImage) -> UIImage? {
+    func rotate(_ imageView: UIImageView, direction: ImageRotator.Direction) {
         
-        let oldFrame = CGRect(origin: CGPoint.zero, size: image.size)
-        print(oldFrame)
+        if let image = imageView.image {
+            imageView.image = rotate(image, direction: direction)
+        }
+    }
+    
+    func rotate(_ image: UIImage, direction: ImageRotator.Direction) -> UIImage? {
         
-        let newFrame = oldFrame.applying(CGAffineTransform(rotationAngle: CGFloat(self.radians)))
-        print(newFrame)
+        let radiansToRotate = self.radians * direction.rawValue
         
-        let newSize = newFrame.size
+        let oldFrame = CGRect(origin: CGPoint.zero, size: image.size)        
+        var newSize = oldFrame.applying(CGAffineTransform(rotationAngle: CGFloat(radiansToRotate))).size
+        
+        // Trim off the extremely small float value to prevent core graphics from rounding it up
+        newSize.width = floor(newSize.width)
+        newSize.height = floor(newSize.height)
         
         UIGraphicsBeginImageContextWithOptions(newSize, false, image.scale)
         let context = UIGraphicsGetCurrentContext()!
 
         // Move origin to middle
         context.translateBy(x: newSize.width/2, y: newSize.height/2)
+        
         // Rotate around middle
-        context.rotate(by: CGFloat(radians))
+        context.rotate(by: CGFloat(radiansToRotate))
+        
         // Draw the image at its center
         let newOrigin = CGPoint(x: -image.size.width/2, y: -image.size.height/2)
+        
         image.draw(in: CGRect(origin: newOrigin, size: image.size))
 
         let newImage = UIGraphicsGetImageFromCurrentImageContext()

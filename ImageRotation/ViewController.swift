@@ -12,8 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     
-    private let clockwiseRotator = ImageRotator(radians: .pi/2, direction: .clockwise)
-    private let counterclockwiseRotator = ImageRotator(radians: .pi/2, direction: .counterclockwise)
+    private let rotator = ImageRotator(radians: .pi/2)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +22,11 @@ class ViewController: UIViewController {
     
     @IBAction func rotateClockwise(_ sender: UIButton) {
         
-        if let image = imageView.image {
-            let rotatedImage = clockwiseRotator.rotate(image)
-            imageView.image = rotatedImage
-        }
+        rotator.rotate(imageView, direction: .clockwise)
     }
     @IBAction func rotateCounterclockwise(_ sender: Any) {
         
-        if let image = imageView.image {
-            let rotatedImage = counterclockwiseRotator.rotate(image)
-            imageView.image = rotatedImage
-        }
+        rotator.rotate(imageView, direction: .counterclockwise)
     }
     
     private func setupImageView() {
