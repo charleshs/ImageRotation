@@ -12,7 +12,7 @@
 		7C01260E2435DA81003410BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C01260C2435DA81003410BF /* Main.storyboard */; };
 		7C0126102435DA82003410BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C01260F2435DA82003410BF /* Assets.xcassets */; };
 		7C0126132435DA82003410BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0126112435DA82003410BF /* LaunchScreen.storyboard */; };
-		7C01261E2435DBEE003410BF /* ImageRotator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01261D2435DBEE003410BF /* ImageRotator.swift */; };
+		7C01261E2435DBEE003410BF /* RotatableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01261D2435DBEE003410BF /* RotatableImage.swift */; };
 		7C0126202435DCEC003410BF /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01261F2435DCEC003410BF /* ImageAsset.swift */; };
 		7C01262A243615EA003410BF /* ImageRotatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C012629243615EA003410BF /* ImageRotatorTests.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +35,7 @@
 		7C01260F2435DA82003410BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C0126122435DA82003410BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C0126142435DA82003410BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C01261D2435DBEE003410BF /* ImageRotator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRotator.swift; sourceTree = "<group>"; };
+		7C01261D2435DBEE003410BF /* RotatableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatableImage.swift; sourceTree = "<group>"; };
 		7C01261F2435DCEC003410BF /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
 		7C012627243615EA003410BF /* ImageRotatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageRotatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C012629243615EA003410BF /* ImageRotatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRotatorTests.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				7C01260F2435DA82003410BF /* Assets.xcassets */,
 				7C0126112435DA82003410BF /* LaunchScreen.storyboard */,
 				7C0126142435DA82003410BF /* Info.plist */,
-				7C01261D2435DBEE003410BF /* ImageRotator.swift */,
+				7C01261D2435DBEE003410BF /* RotatableImage.swift */,
 				7C01261F2435DCEC003410BF /* ImageAsset.swift */,
 			);
 			path = ImageRotation;
@@ -203,7 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C01261E2435DBEE003410BF /* ImageRotator.swift in Sources */,
+				7C01261E2435DBEE003410BF /* RotatableImage.swift in Sources */,
 				7C01260B2435DA81003410BF /* ViewController.swift in Sources */,
 				7C0126202435DCEC003410BF /* ImageAsset.swift in Sources */,
 				7C0126072435DA81003410BF /* AppDelegate.swift in Sources */,
