@@ -38,25 +38,44 @@ public class RotatableImage {
         self.originalImage = image
     }
     
-    public func rotate(by radians: Double, direction: RotatableImage.Direction) {
-        
-        _rotate(by: radians, direction: direction)
-    }
-    
-    public func rotated(by radians: Double, direction: RotatableImage.Direction) -> UIImage? {
-        
-        rotate(by: radians, direction: direction)
-        return rotatedImage
-    }
-    
     public func rotate(to radians: Double) {
         
-        _rotate(to: CGFloat(radians))
+        if radians.truncatingRemainder(dividingBy: .pi * 2) == 0 {
+            rotatedRadians = radians
+            rotatedImage = originalImage
+            return
+        }
+        
+        let rotatedRect = getRotatedRect(for: originalImage, by: CGFloat(radians))
+        
+        do {
+            let newImage = try getImageFromContext(rect: rotatedRect, toAngle: CGFloat(radians))
+            rotatedRadians = radians
+            rotatedImage = newImage
+            
+        } catch {
+            debugPrint("Error: \(error)")
+        }
+    }
+    
+    public func rotate(by radians: Double, direction: RotatableImage.Direction) {
+        
+        let finalRadians = rotatedRadians + radians * direction.rawValue
+        
+        rotate(to: finalRadians)
     }
     
     public func rotated(to radians: Double) -> UIImage? {
         
         rotate(to: radians)
+        
+        return rotatedImage
+    }
+    
+    public func rotated(by radians: Double, direction: RotatableImage.Direction) -> UIImage? {
+        
+        rotate(by: radians, direction: direction)
+        
         return rotatedImage
     }
     
@@ -69,39 +88,13 @@ public class RotatableImage {
     public func rotatedAsOriginal() -> UIImage? {
         
         rotateToOriginal()
+        
         return rotatedImage
     }
     
     public func getOriginalImage() -> UIImage {
         
         return originalImage
-    }
-    
-    private func _rotate(by radians: Double, direction: RotatableImage.Direction) {
-        
-        let finalRadians = CGFloat(rotatedRadians + radians * direction.rawValue)
-        
-        _rotate(to: finalRadians)
-    }
-    
-    private func _rotate(to radians: CGFloat) {
-        
-        if radians.truncatingRemainder(dividingBy: .pi * 2) == 0 {
-            rotatedRadians = Double(radians)
-            rotatedImage = originalImage
-            return
-        }
-        
-        let rotatedRect = getRotatedRect(for: originalImage, by: radians)
-        
-        do {
-            let newImage = try getImageFromContext(rect: rotatedRect, toAngle: radians)
-            rotatedRadians = Double(radians)
-            rotatedImage = newImage
-            
-        } catch {
-            debugPrint("Unresolved error: \(error)")
-        }
     }
     
     private func getImageFromContext(rect: CGRect, toAngle radians: CGFloat) throws -> UIImage? {
