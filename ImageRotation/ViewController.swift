@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     
     enum Angle {
@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         case half
         
         var radians: Double {
+            
             switch self {
             case .halfQuarter: return .pi / 4
             case .quarter: return .pi / 2
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     private let radiansToRotate = Angle.halfQuarter.radians
-
+    
     private var rotatableImage: RotatableImage?
     
     override func viewDidLoad() {
