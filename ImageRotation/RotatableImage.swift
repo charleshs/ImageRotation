@@ -49,7 +49,7 @@ public class RotatableImage {
         let rotatedRect = getRotatedRect(for: originalImage, by: CGFloat(radians))
         
         do {
-            let newImage = try getImageFromContext(rect: rotatedRect, toAngle: CGFloat(radians))
+            let newImage = try getRotatedImageFromContext(rotatedRect: rotatedRect, toAngle: CGFloat(radians))
             rotatedRadians = radians
             rotatedImage = newImage
             
@@ -97,14 +97,14 @@ public class RotatableImage {
         return originalImage
     }
     
-    private func getImageFromContext(rect: CGRect, toAngle radians: CGFloat) throws -> UIImage? {
+    private func getRotatedImageFromContext(rotatedRect: CGRect, toAngle radians: CGFloat) throws -> UIImage? {
         
-        UIGraphicsBeginImageContext(rect.size)
+        UIGraphicsBeginImageContext(rotatedRect.size)
         guard let context = UIGraphicsGetCurrentContext() else {
             throw RotatableImageError.getCurrentContextError
         }
         
-        context.translateBy(x: rect.width / 2, y: rect.height / 2)
+        context.translateBy(x: rotatedRect.width / 2, y: rotatedRect.height / 2)
         context.rotate(by: radians)
         context.translateBy(x: -originalImage.size.width / 2, y: -originalImage.size.height / 2)
         
