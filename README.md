@@ -2,6 +2,12 @@
 
 A module created for Swift language to deal with rotation of an image.
 
+## Demo
+
+Please download the project and run in Xcode
+
+<img src=https://raw.githubusercontent.com/charleshs/ImageRotation/master/ImageRotationDemo.gif height=500>
+
 ## Usage
 
 Use `RotatableImage` to hold an UIImage and to provide rotation functionalities.
